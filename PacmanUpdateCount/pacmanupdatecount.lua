@@ -15,6 +15,7 @@
 barWidget.define({
     label = "Pacman Update Count",
     icon = "packages",
+    version = "1.0.0",  
     description = "Tells you how many arch packages need updating.",
     settings = {
         { key = "glyph", type = "glyph", label = "Glyph", default = "packages" },
