@@ -77,6 +77,13 @@ barWidget.setUpdateInterval(updateInterval)
 local imageSet = false
 
 function update()
+    if not commandLine or commandLine == "" then
+        if not imageSet then
+            barWidget.setImage(imagePath, true, imageWidth, imageHeight)
+            imageSet = true
+        end
+        return
+    end
     noctalia.runAsync(commandLine, function(result)
         if result.exitCode == 0 then
             if not imageSet then
